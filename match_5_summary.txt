@@ -1,0 +1,14 @@
+Match ID: 5
+Tournament: BGIS 2025
+Match Info: SF-W2-D4
+Map: Erangel
+Date: 2025-04-06
+Time Range: 00:54:40 to 00:55:30
+Total Kills: 6
+
+1. [00:55:10] RX killed Joker
+2. [00:55:11] X killed oker
+3. [00:55:13] 3X killed KPI
+4. [00:55:23] HitlerBAE D killed 333H4Kx0eviL
+5. [00:55:24] HitlerBAE killed 333H4KxDevil
+6. [00:55:25] HitlerBAE killed 1000

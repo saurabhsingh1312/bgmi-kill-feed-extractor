@@ -1,0 +1,12 @@
+# Python-specific ignores
+__pycache__/
+*.pyc
+.DS_Store
+
+# Environment variables
+.env
+
+# Directories for temporary video frames and logs
+# This ignores any folder created by the script, e.g., "BGIS 2025_SF-W2-D4_22"
+*/
+
