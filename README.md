@@ -87,6 +87,56 @@ paddleocr
 
 ---
 
+# 🗄 Match Tracking DB
+
+This database stores **match details** and **kill events** for tournaments.
+
+---
+
+## **Tables**
+
+### **1. match\_info**
+
+```sql
+CREATE TABLE `match_info` (
+  `match_id` INT NOT NULL AUTO_INCREMENT,
+  `tournament_name` VARCHAR(255) DEFAULT NULL,
+  `match_info` VARCHAR(15) DEFAULT NULL,
+  `map` VARCHAR(20) DEFAULT NULL,
+  `match_number` INT DEFAULT NULL,
+  `date_of_match` DATE DEFAULT NULL,
+  PRIMARY KEY (`match_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+```
+
+---
+
+### **2. match\_kills**
+
+```sql
+CREATE TABLE `match_kills` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `match_id` INT DEFAULT NULL,
+  `player` VARCHAR(40) DEFAULT NULL,
+  `finished_player` VARCHAR(40) DEFAULT NULL,
+  `kill_method` VARCHAR(50) DEFAULT NULL,
+  `ocr_text` TEXT,
+  `kill_timestamp` TIME DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `match_id` (`match_id`),
+  CONSTRAINT `match_kills_ibfk_1` FOREIGN KEY (`match_id`) REFERENCES `match_info` (`match_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+```
+
+---
+
+## **Relationship**
+
+* One **match\_info** record can have many **match\_kills** entries.
+* `match_kills.match_id` → `match_info.match_id`.
+
+---
+
 ## 🚀 Usage
 
 Run the script from the terminal:
